@@ -23,7 +23,7 @@ const CitasBlock = ({ citaslista = [], citasfondo }) => {
     return (
 
 
-        <section className={` relative bg-citasFondo transition-all ease-in-out duration-[618ms] min-h-80 gx:min-h-80 flex flex-grow items-center justify-center `}>
+        <section className={` relative bg-otoFondoCitasFondo transition-all ease-in-out duration-[618ms] min-h-80 gx:min-h-80 flex flex-grow items-center justify-center `}>
             {citasfondo && (
             <div className={` absolute top-0 left-0 inset-0 z-10 opacity-20`}>
                 <img src={citasfondo.src} className={` object-center object-cover w-full h-full `} alt='' />
@@ -33,7 +33,7 @@ const CitasBlock = ({ citaslista = [], citasfondo }) => {
                 <p className={`mx-auto max-w-3xl font-NotoSerif italic font-light text-[15rem] leading-[12rem] text-blue-950 `}>“</p>
             </div>
             <div className={` relative z-20 max-w-5xl mx-auto `}>
-                <p className={` text-center font-NotoSerif italic text-white text-md lg:text-lg gx:text-xl mx-12 transition-opacity duration-[618ms] ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ lineHeight: '1.8em' }}>{cita}<br /><span className={` font-Cabin text-blue-950 text-md gx:text-xl font-bold leading-relaxed mt-4`}>{autor}</span></p>
+                <p className={` text-center font-NotoSerif italic text-white text-md lg:text-lg gx:text-xl mx-12 transition-opacity duration-[618ms] ${fade ? 'opacity-100' : 'opacity-0'}`} style={{ lineHeight: '1.8em' }}>{cita}<br /><span className={` font-Cabin text-black text-md gx:text-xl font-bold leading-relaxed mt-4`}>{autor}</span></p>
             </div>
         </section>
 

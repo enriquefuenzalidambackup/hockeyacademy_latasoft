@@ -5,28 +5,30 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import identityLogo from 'public/images/identitylogo.png';
+import hockeyAcademyLogoB from 'public/hockeyacademycamp/hockeyacademycamp_sponsor_09.png';
+import hockeyAcademyLogo from 'public/hockeyacademycamp/hockeyacademycamp_logo.png';
 import facebookIcon from 'public/images/facebook.svg';
 import instagramIcon from 'public/images/instagram.svg';
 import tiktokIcon from 'public/images/tiktok.svg';
 import youtubeIcon from 'public/images/youtube.svg';
 
+// { linkText: 'Eurohockey 2025', href: '/eurohockey' },
+// { linkText: 'Hockey Tecnificación', href: '/hockeytecnificacion' }
+
 const navItems = [
     { linkText: 'Inicio', href: '/' },
-    { linkText: 'Viajes Deportivos',
-        subTitulos: [
-            { linkText: 'Eurohockey 2025', href: '/eurohockey' },
-            { linkText: 'Hockey Tecnificación', href: '/hockeytecnificacion' }
+    { linkText: 'Eventos próximos', href: '/eventosproximos' },
+    { linkText: 'Campus Tecnificación Europa',
+        subTitulos: [,
+            { linkText: 'Campus Eurohockey', href: '/eurohockey' },
+            { linkText: 'Hockey de Tecnificación', href: '/hockeytecnificacion' }
         ]
      },
-    { linkText: 'Campus de Tecnificación',
-        subTitulos: [
-            { linkText: 'Hockey Hierba Barcelona', href: '/hockeyhierbabarcelona' },
-            { linkText: 'Hockey Hierba Valencia', href: '/hockeyhierbavalencia' }
-        ]
-     },
-    { linkText: 'Nosotros', href: '/nosotros' },
-    { linkText: '¿Qué es un campus deportivo?', href: '/queesuncampodeportivo' },
+    { linkText: 'Benefecios HA Card', href: '/beneficioshacard' },
+    { linkText: 'Quiénes somos', href: '/quienessomos' },
+    { linkText: 'Staff', href: '/staff' },
+    { linkText: 'Alianzas Estratégicas', href: '/sponsors' },
+    { linkText: 'Qué es Hockey Academy', href: '/queeshockeyacademy' },
 //    { linkText: 'Novedades', href: '/novedades' },
     { linkText: 'Contacto', href: '/contacto' }
 ];
@@ -102,9 +104,9 @@ export function Navigation() {
     };
 
     const getLinkClass = (path, subTitulos) => {
-        if (path === activePath) return 'text-[#d11e82]';
-        if (subTitulos && isSubItemActive(subTitulos)) return 'text-[#d11e82]';
-        return 'text-white';
+        if (path === activePath) return 'text-[#53CDF8]';
+        if (subTitulos && isSubItemActive(subTitulos)) return 'text-[#53CDF8]';
+        return 'text-[rgba(255,255,255,0.8)]';
     };
 
     return (
@@ -114,7 +116,7 @@ export function Navigation() {
 
                 <div className={` py-2 px-4 flex     md:p-2 md:inline-block md:aspect-1 md:w-full `}>
                     <Link href='.\'>
-                        <Image src={identityLogo} alt={` `} className={` w-24 object-cover object-center h-14    md:w-full md:h-auto `} />
+                        <Image src={hockeyAcademyLogoB} alt={` `} className={` object-cover object-center h-14 w-auto md:w-24 md:h-auto md:mx-auto`} />
                     </Link>
                 </div>
                 <div className={` queverguenzaMenu pr-3 h-auto flex flex-grow items-center justify-end    md:flex-col md:p-0 md:justify-center `}>
@@ -129,8 +131,8 @@ export function Navigation() {
                 </div>
                 <div className={` hidden grid-cols-2 grid-rows-2 gap-6 p-7    md:grid md:aspect-1 md:w-32 `}>
                     <Link href={` https://www.facebook.com/identity.campus.arg/ `} className={`inline-block `}><Image src={facebookIcon} alt={` `} className={` mx-auto `} /></Link>
-                    <Link href={` https://www.instagram.com/identity.campus/ `} className={`inline-block `}><Image src={instagramIcon} alt={` `} className={` mx-auto `} /></Link>
-                    <Link href={` https://www.tiktok.com/@identitycampus `} className={`inline-block `}><Image src={tiktokIcon} alt={` `} className={` mx-auto `} /></Link>
+                    <Link href={` https://www.instagram.com/hockeyacademyok/ `} className={`inline-block `}><Image src={instagramIcon} alt={` `} className={` mx-auto `} /></Link>
+                    <Link href={` https://www.tiktok.com/@hockeyacademyok `} className={`inline-block `}><Image src={tiktokIcon} alt={` `} className={` mx-auto `} /></Link>
                     <Link href={` https://www.youtube.com/channel/UCug1CBwhTNIJ9rZFNGuu0_A `} className={` inline-block `}><Image src={youtubeIcon} alt={` `} className={` mx-auto `} /></Link>
                 </div>
 
@@ -141,19 +143,19 @@ export function Navigation() {
                     {navItems.map((item, index) => (
                         <li key={index}>
                             {item.href && (
-                                <Link href={item.href} onClick={handleLinkClick} className={`${getLinkClass(item.href)} hover:text-[#d11e82] no-underline whitespace-nowrap`}>
+                                <Link href={item.href} onClick={handleLinkClick} className={`${getLinkClass(item.href)} hover:text-[#53CDF8] no-underline whitespace-nowrap`}>
                                     {item.linkText}
                                 </Link>
                             )}
                             {item.subTitulos && (
                                 <div>
-                                    <div onClick={() => handleSubMenuToggle(index)} className={`${getLinkClass(item.href, item.subTitulos)} hover:text-[#d11e82] cursor-pointer whitespace-nowrap `}> 
+                                    <div onClick={() => handleSubMenuToggle(index)} className={`${getLinkClass(item.href, item.subTitulos)} hover:text-[#53CDF8] cursor-pointer whitespace-nowrap `}> 
                                         {item.linkText}
                                     </div>
                                     <ul ref={el => subMenuRefs.current[index] = el} className={`h-0 opacity-0 leading-tight transition-all overflow-hidden `}>
                                         {item.subTitulos.map((subItem, subIndex) => (
                                             <li key={subIndex} className={` ml-3 md:mr-3 `}>
-                                                <Link href={subItem.href} onClick={handleLinkClick} className={`${getLinkClass(subItem.href)} hover:text-[#d11e82] no-underline text-sm whitespace-nowrap `}>
+                                                <Link href={subItem.href} onClick={handleLinkClick} className={`${getLinkClass(subItem.href)} hover:text-[#53CDF8] no-underline text-sm whitespace-nowrap `}>
                                                     {subItem.linkText}
                                                 </Link>
                                             </li>
