@@ -6,11 +6,9 @@ module.exports = {
     content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
-            clipPath: {
-              'triangle': 'polygon(0 0, calc(50% - 25px) 0, 50% 10%, calc(50% + 25px) 0, 100% 0, 100% 100%, 0 100%)',
-            },
             backgroundImage: {
-                'otoFondo': 'linear-gradient(to bottom, rgb(119, 172, 212), rgb(88, 119, 155), rgb(119, 172, 212), rgb(88, 119, 155), rgb(119, 172, 212), rgb(88, 119, 155), rgb(119, 172, 212), rgb(88, 119, 155))',
+                'lineasPatron': "url('/images/lineasPatron__.png')",
+                'otoFondo': 'linear-gradient(to bottom, rgb(88, 119, 155), rgb(119, 172, 212), rgb(143, 184, 217), rgb(119, 172, 212), rgb(88, 119, 155))',
                 'otoFondoDos': 'linear-gradient(to bottom, rgb(119, 172, 212), rgb(88, 119, 155))',
                 'otoFondoRatioFondo': 'radial-gradient(ellipse at 0 0 , rgb(119, 172, 212), rgb(88, 119, 155))',
                 'otoFondoRatioFondoHover': 'radial-gradient(ellipse at 0 0 , rgb(119, 172, 212), rgb(43, 59, 77))',
@@ -24,11 +22,16 @@ module.exports = {
                 'fucsiaAzulFondoTres': 'linear-gradient(to bottom, rgb(211, 0, 126), rgb(18, 33, 77), rgb(211, 0, 126))',
                 'transparentBlackFondo': 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3))',
                 'blackTransparenteFondo': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))',
-                'whiteFadedFondo': 'linear-gradient(to bottom, rgba(225, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))',
+                'whiteFadedFondo': 'linear-gradient(to bottom, rgba(225, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 8rem, rgba(255, 255, 255, 1) calc(100% - 8rem), rgba(255, 255, 255, 0) 100% )',
+                'whiteFadedFondoDos': 'linear-gradient(to bottom, rgba(225, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 3rem, rgba(255, 255, 255, 1) calc(100% - 4rem), rgba(255, 255, 255, 0) 100% )',
                 'dsfsd': 'linear-gradient(to bottom, rgb(211, 0, 126), rgb(18, 33, 77), rgb(211, 0, 126), rgb(18, 33, 77), rgb(211, 0, 126), rgb(18, 33, 77))',
-                'fucsiaAzulRatioFondo': 'radial-gradient(ellipse at 0 0 , rgb(211, 0, 126), rgb(18, 33, 77))',
+                'fucsiaAzulRatioFondo': 'radial-gradient(ellipse at 0 0, rgb(211, 0, 126), rgb(18, 33, 77))',
+                'fucsiaAzulRatioFondoHover': 'radial-gradient(ellipse at 80% 100%, rgb(211, 0, 126), rgb(18, 33, 77))',
                 'citasFondo': 'linear-gradient(240deg, rgb(246, 187, 14) 0%, rgb(242, 41, 91) 100%)',
-                'nosotrosGradient': 'linear-gradient(220deg, rgb(18, 33, 77) 44%, rgb(242, 41, 91) 80%)'
+                'nosotrosGradient': 'linear-gradient(200deg, rgb(18, 33, 77) 47%, rgb(211, 0, 126) 100%)'
+            },
+            clipPath: {
+              'triangle': 'polygon(0 0, calc(50% - 25px) 0, 50% 10%, calc(50% + 25px) 0, 100% 0, 100% 100%, 0 100%)',
             },
             colors: {
                 'fucsiaFundo': 'rgb(211, 0, 126)',
@@ -50,6 +53,10 @@ module.exports = {
               'gx': '1160px',
               'xl': '1280px',
               '2xl': '1536px',
+            },
+            boxShadow: {
+              'navVertical': '0.8rem 0 1rem -0.2rem rgb( 0, 0, 0, 0.3), 0.25rem 0 0.3rem -0.25rem rgb( 0, 0, 0, 0.3);',
+              'navHorizontal': '0 0.8rem 1rem -0.2rem rgb( 0, 0, 0, 0.5), 0 0.25rem 0.3rem -0.25rem rgb( 0, 0, 0, 0.5);',
             }
         }
     },
